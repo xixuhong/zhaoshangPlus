@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Date;
 import lombok.Data;
 
@@ -47,11 +48,11 @@ public class ParkInfoEntity implements Serializable {
 	/**
 	 * 创建时间
 	 */
-	private Date createTime;
+	private LocalDateTime createTime;
 	/**
 	 * 修改时间
 	 */
-	private Date updateTime;
+	private LocalDateTime updateTime;
 	/**
 	 * 首页配置信息
 	 */

@@ -1,8 +1,12 @@
 package com.tmxk.map.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.tmxk.map.entity.NewsEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,8 +34,14 @@ public class ProfessionalController {
      * 列表
      */
     @GetMapping("/list")
-    public R list(@RequestParam Map<String, Object> params){
-        PageUtils page = professionalService.queryPage(params);
+    public R list(@RequestParam int curPage,@RequestParam String type){
+
+        int limit = 10;
+        Page<ProfessionalEntity> page = new Page<>(curPage,limit);
+        LambdaQueryWrapper<ProfessionalEntity> queryWrapper =new LambdaQueryWrapper<>();
+        queryWrapper.eq(ProfessionalEntity::getType,type);
+        // List<ProfessionalEntity> list = professionalService.list(queryWrapper);
+        professionalService.page(page,queryWrapper);
 
         return R.ok().put("page", page);
     }

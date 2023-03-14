@@ -1,16 +1,15 @@
 package com.tmxk.map.controller;
 
-import java.util.Arrays;
-import java.util.Map;
-
+import com.tmxk.common.utils.PageUtils;
+import com.tmxk.common.utils.R;
+import com.tmxk.map.entity.ParkInfoEntity;
+import com.tmxk.map.service.ParkInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import com.tmxk.map.entity.ParkInfoEntity;
-import com.tmxk.map.service.ParkInfoService;
-import com.tmxk.common.utils.PageUtils;
-import com.tmxk.common.utils.R;
-
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 
 /**
@@ -36,6 +35,25 @@ public class ParkInfoController {
         return R.ok().put("page", page);
     }
 
+
+
+
+
+
+    /**
+     * 根据园区级别查询园区
+     * @return
+     */
+    @GetMapping(value = "/findbygrade/{grade}")
+    public R getByGrade(@PathVariable String grade) {
+        ParkInfoEntity park = parkInfoService.getByGrade(grade);
+        HashMap<String, Object> map = new HashMap<>();
+        if (park == null) {
+            return R.error("grade错误");
+        }
+        map.put("data", park);
+        return R.ok(map);
+    }
 
     /**
      * 信息
@@ -76,5 +94,4 @@ public class ParkInfoController {
 
         return R.ok();
     }
-
 }

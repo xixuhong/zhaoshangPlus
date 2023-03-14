@@ -16,5 +16,8 @@ import java.util.Map;
 public interface ParkInfoService extends IService<ParkInfoEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
+    Object getParkIdByparkName(String parkName);
+
+    ParkInfoEntity getByGrade(String grade);
 }
 

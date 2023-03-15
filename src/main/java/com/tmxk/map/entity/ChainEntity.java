@@ -49,10 +49,7 @@ public class ChainEntity implements Serializable {
 	 * 招商方向
 	 */
 	private String direction;
-	/**
-	 * 招商政策
-	 */
-	private String policy;
+
 	/**
 	 * 是否是重点企业
 	 */

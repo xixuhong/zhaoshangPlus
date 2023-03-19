@@ -23,14 +23,14 @@ public class ChainNewsEntity implements Serializable {
 	 * 主键id
 	 */
 	@TableId
-	private Integer id;
+	private Long id;
 	/**
 	 * chain的id
 	 */
-	private Integer chainId;
+	private Long chainId;
 	/**
 	 * news的id
 	 */
-	private Integer newsId;
+	private Long newsId;
 
 }

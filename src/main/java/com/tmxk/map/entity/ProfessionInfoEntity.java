@@ -23,7 +23,7 @@ public class ProfessionInfoEntity implements Serializable {
 	 * 人才id
 	 */
 	@TableId
-	private Integer professionalId;
+	private Long professionalId;
 	/**
 	 * 人才照片
 	 */

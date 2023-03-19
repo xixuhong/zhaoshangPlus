@@ -32,7 +32,7 @@ public class ChainEntity implements Serializable {
 	 * 产业链id
 	 */
 	@TableId
-	private Integer chainId;
+	private Long chainId;
 	/**
 	 * 产业介绍
 	 */

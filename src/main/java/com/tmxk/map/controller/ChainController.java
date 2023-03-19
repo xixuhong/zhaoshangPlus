@@ -129,7 +129,7 @@ public class ChainController {
         LambdaQueryWrapper<ChainNewsEntity> query2 = new LambdaQueryWrapper<>();
         query2.eq(ChainNewsEntity::getChainId, chain.getChainId());
         List<ChainNewsEntity> list = chainNewsService.list(query2);
-        List<Integer> idList = list.stream().map(ChainNewsEntity::getNewsId).collect(Collectors.toList());
+        List<Long> idList = list.stream().map(ChainNewsEntity::getNewsId).collect(Collectors.toList());
         // 根据news_id查询news
         List<NewsEntity> newsEntities = newsService.listByIds(idList);
         return R.ok().put("data", newsEntities);

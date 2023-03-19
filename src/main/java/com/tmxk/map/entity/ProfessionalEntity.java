@@ -36,7 +36,7 @@ public class ProfessionalEntity implements Serializable {
 	 * 人才id
 	 */
 	@TableId
-	private Integer professionalId;
+	private Long professionalId;
 	/**
 	 * 创建时间
 	 */

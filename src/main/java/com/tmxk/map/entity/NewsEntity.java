@@ -24,7 +24,7 @@ public class NewsEntity implements Serializable {
 	 * 政策id
 	 */
 	@TableId
-	private Integer newsId;
+	private Long newsId;
 	/**
 	 * 区域
 	 */

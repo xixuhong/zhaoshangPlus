@@ -28,7 +28,7 @@ public class ParkInfoEntity implements Serializable {
 	 * 园区id
 	 */
 	@TableId
-	private Integer parkId;
+	private Long parkId;
 	/**
 	 * 园区级别
 	 */

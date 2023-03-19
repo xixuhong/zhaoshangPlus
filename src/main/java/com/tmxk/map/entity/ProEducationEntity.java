@@ -23,7 +23,7 @@ public class ProEducationEntity implements Serializable {
 	 * 人才id
 	 */
 	@TableId
-	private Integer professionalId;
+	private Long professionalId;
 	/**
 	 * 毕业院校
 	 */
